@@ -1,9 +1,9 @@
 {
   "rewrites": [
-    { "source": "/privacy", "destination": "/index.html" },
-    { "source": "/terms", "destination": "/index.html" },
-    { "source": "/refund", "destination": "/index.html" },
-    { "source": "/shipping", "destination": "/index.html" },
-    { "source": "/contact", "destination": "/index.html" }
+    { "source": "/privacy", "destination": "/" },
+    { "source": "/terms", "destination": "/" },
+    { "source": "/refund", "destination": "/" },
+    { "source": "/shipping", "destination": "/" },
+    { "source": "/contact", "destination": "/" }
   ]
 }
