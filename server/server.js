@@ -10,7 +10,7 @@ const app=express()
 
 app.use(express.json())
 app.use(cors({
-  origin: ["https://text-to-image-5fhz.vercel.app"],
+  origin: ["http://localhost:5173", "https://text-to-image-5fhz.vercel.app"],
   credentials: true
 }));
 await connectDB()
