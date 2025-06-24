@@ -5,9 +5,8 @@ import {motion} from 'framer-motion'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 const Login = () => {
-    const [backendUrl] = useState("https://text-to-image-vfre.onrender.com");
     const [state, setState]=useState('Login')
-    const {setShowLogin, setToken, setUser}=useContext(AppContext)
+    const {setShowLogin, backendUrl, setToken, setUser}=useContext(AppContext)
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
