@@ -27,10 +27,11 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/result' element={<Result/>}/>
         <Route path='/buy' element={<BuyCredit/>}/>
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/refund" element={<Refund />} />
-        <Route path="/shipping" element={<Shipping />} />
+        {/* Other routes */}
+  <Route path="/privacy" element={<Privacy />} />
+  <Route path="/terms" element={<Terms />} />
+  <Route path="/refund" element={<Refund />} />
+  <Route path="/shipping" element={<Shipping />} />
         <Route path="/contact" element={<Contact />} />
       
       </Routes>
