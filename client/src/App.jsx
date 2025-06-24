@@ -9,6 +9,11 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import { AppContext } from './context/AppContext'
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Refund from './pages/Refund';
+import Shipping from './pages/Shipping';
+import Contact from './pages/Contact';
 
 const App = () => {
   const {showLogin}=useContext(AppContext)
@@ -22,7 +27,11 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/result' element={<Result/>}/>
         <Route path='/buy' element={<BuyCredit/>}/>
-
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/refund" element={<Refund />} />
+        <Route path="/shipping" element={<Shipping />} />
+        <Route path="/contact" element={<Contact />} />
       
       </Routes>
       <Footer/>
