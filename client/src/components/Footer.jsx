@@ -4,7 +4,11 @@ import { assets } from '../assets/assets'
 const Footer = () => {
   return (
     <div className='flex items-center justify-between gap-4 py-3 mt-20'>
-      <img src={assets.logo} alt="" width={150}/>
+      <h3 className="text-black text-3xl tracking-tight font-pacifico w-36 h-auto max-md:flex-1">
+  <span className="text-blue-500">P</span>ict
+  <span className="text-black">ora</span>
+</h3>
+
       <p className='flex-1 border-l border-gray-400 pl-4 text-sm text-gray-500 max-sm:hidden'>Copyright @Karthiga | All right reserved.</p>
       
       <div className='flex gap-2.5 '>

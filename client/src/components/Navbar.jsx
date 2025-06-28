@@ -9,9 +9,11 @@ const Navbar = () => {
     const navigate= useNavigate()
   return (
     <div className='flex items-center justify-between py-4'>
-      <Link to='/'>
-      <img src={assets.logo} alt="" className='w-28 sm:w-32 lg:w-40' />
-      </Link>
+      <Link to="/" className="text-black text-3xl tracking-tight font-pacifico w-36 h-auto max-md:flex-1">
+  <span className="text-blue-500">P</span>ict
+  <span className="text-black">ora</span>
+</Link>
+
 
       <div>
         { 
