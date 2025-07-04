@@ -9,10 +9,26 @@ const PORT = process.env.PORT || 4000
 const app=express()
 
 app.use(express.json())
+// app.use(cors({
+//   origin: ["http://localhost:5173", "https://text-to-image-5fhz.vercel.app"],
+//   credentials: true
+// }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://text-to-image-5fhz.vercel.app"
+];
+
 app.use(cors({
-  origin: ["http://localhost:5173", "https://text-to-image-5fhz.vercel.app"],
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed for this origin"));
+    }
+  },
   credentials: true
 }));
+
 await connectDB()
 
 app.use('/api/user', userRouter)
