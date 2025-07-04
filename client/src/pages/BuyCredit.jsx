@@ -40,23 +40,33 @@ const initPay = async (order)=>{
   rzp.open()
 }
 
-const paymentRazorpay=async (planId)=>{
-try {
-  if(!user){
-    setShowLogin(true)
+const paymentRazorpay = async (planId) => {
+  try {
+    if (!user) {
+      setShowLogin(true);
+      return; // 🛑 Stop further execution if not logged in
+    }
+
+    console.log("Selected plan:", planId);
+
+    const { data } = await axios.post(
+      backendUrl + '/api/user/pay-razor',
+      { planId },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+
+    if (data.success) {
+      initPay(data.order);
+    } else {
+      toast.error(data.message || "Payment initialization failed");
+    }
+
+  } catch (error) {
+    console.error(error);
+    toast.error(error.response?.data?.message || error.message || "Something went wrong");
   }
+};
 
-  const {data}=await axios.post(backendUrl + '/api/user/pay-razor', {planId},{ headers: { Authorization: `Bearer ${token}` } }
-)
-
-if(data.success){
-  initPay(data.order)
-}
-
-} catch (error) {
-  toast.error(error.message)
-}
-}
 
   return (
     <motion.div 
