@@ -70,7 +70,8 @@ const razorpayInstance= new razorpay({
 const paymentRazorpay=async(req,res)=>{
     try {
         
-        const {userId, planId}=req.body
+        const userId = req.userId;  // ✅ get from token
+        const { planId } = req.body;
 
         const userData=await userModel.findById(userId)
         if(!userId || !planId){
